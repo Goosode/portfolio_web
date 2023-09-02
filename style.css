@@ -1,0 +1,294 @@
+@font-face {
+    font-family: FC Minimal;
+    src: url(font/FC\ Minimal\ Regular.ttf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'FC Minimal';
+    scroll-behavior: smooth;
+}
+
+body{
+    background: #3c57ad;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* loading screen */
+#loading{
+    background: #1b1d21 url(Image/loading.gif) no-repeat center center;
+    background-size: 23%;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 10001;
+}
+
+
+/* navbar */
+header{
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10000;
+    transition: 0.3s;
+}
+
+header.sticky{
+    background: rgba(1, 16, 34, .9);
+    backdrop-filter: blur(5px);
+    transition: 0.7s;
+}
+
+header .icon{
+    width: 50px;
+    height: 60px;
+    display: inline;
+}
+
+header .logo{
+    color: #F1F0E8;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 4em;
+    font-weight: 1500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+header ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header ul li{
+    list-style: none;
+    margin-left: 20px;
+}
+
+header ul li a{
+    text-decoration: none;
+    padding: 6px 15px;
+    color: #F1F0E8;
+    font-size: 2.1em;
+    font-weight: 1000;
+    transition: 0.3s;
+    border-radius: 15px;
+}
+header.sticky .logo{
+    color: #F1F0E8;
+}
+
+header.sticky ul li a:hover{
+    color: #161616;
+    background: #F1F0E8;
+}
+
+header ul li a:hover
+{
+    background: #F1F0E8;
+    color: #161616;
+}
+
+
+/* background */
+section{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+section::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top,#040718,transparent);
+    z-index: 1000;
+}
+
+section img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+section img#moon{
+    mix-blend-mode: screen;
+}
+
+section img#front{
+    z-index: 10;
+}
+
+#text{
+    position: absolute;
+    color: #F1F0E8;
+    white-space: nowrap;
+    font-size: 10vw;
+    pointer-events: none;
+    margin-bottom: 100px;
+}
+
+#btn{
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 30px;
+    border-radius: 40px;
+    background-color: #F1F0E8;
+    color: #161616;
+    z-index: 9;
+    font-size: 3em;
+    transform: translateY(100px);
+}
+
+
+/* about page */
+.about{
+    position: relative;
+    padding: 100px;
+    background: #040718;
+}
+
+.about h2{
+    font-size: 5em;
+    margin-left: 10%;
+    margin-bottom: 8px;
+    color: #F1F0E8;
+}
+
+.about h1{
+    font-size: 4em;
+    margin-left: 10%;
+    margin-bottom: 8px;
+    color: #F1F0E8;
+}
+
+.about p{
+    font-size: 2.4em;
+    margin-left: 10%;
+    margin-right: 55%;
+    color: #F1F0E8;
+}
+
+
+/* certificate page */
+.cer{
+    position: relative;
+    padding: 100px;
+    background: #060b2b;
+}
+
+.cer h2{
+    font-size: 7em;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #F1F0E8;
+}
+
+.cer img{
+    top: 0;
+    left: 0;
+    position: relative;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    pointer-events: none;
+}
+
+.slide {
+    display:none;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    padding: 16px;
+    color: #000;
+    font-weight: bold;
+    font-size: 25px;
+    border-radius: 80px 80px 80px 80px;
+    background-color: #B6D5E1;
+  }
+  
+.next {
+    right: 0;
+    margin-right: 100px;    
+}
+  
+.prev:hover, .next:hover {
+    transition: .3s;
+    background-color: #65799B;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.3s;
+}
+  
+@keyframes fade {
+    from {opacity: .6} 
+    to {opacity: 1}
+}
+
+
+/* footer contact*/
+.footer{
+    padding: 50px 0;
+    background: #040718;
+}
+
+.footer .icon{
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.footer .icon a{
+    text-align: center;
+    padding-left: 20px;
+    font-size: 23px;
+    display: inline-block;
+    line-height: 35px;
+}
+
+.footer .icon a:hover{
+    opacity: 0.9;
+    font-size: 25px;
+}
+
+.footer .create_by{
+    font-family: FC Minimal;
+    margin-top: 15px;
+    color: #F1F0E8;
+    font-size: 28px;
+    text-align: center;
+}
+
+.footer .copyright{
+    font-family: FC Minimal;
+    margin-top: 10px;
+    color: #F1F0E8;
+    font-size: 22px;
+    text-align: center;
+}
